@@ -1,0 +1,10 @@
+[project]
+name = "email-ai-assistant"
+version = "0.1.0"
+description = "Python AI email assistant for triage, summaries, draft replies, bulk cleanup, and alerts."
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.email-ai-assistant]
+runtime = "stdlib"
+agent_language = "python"

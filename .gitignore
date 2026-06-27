@@ -1,0 +1,12 @@
+node_modules/
+.env
+private/
+data/*.local.json
+data/mail-actions.json
+data/agent-memory.json
+__pycache__/
+*.pyc
+.pytest_cache/
+coverage/
+.DS_Store
+Thumbs.db

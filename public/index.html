@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Email AI Assistant</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">AI Mail Desk</p>
+          <h1>Email AI Assistant</h1>
+        </div>
+        <div class="status-strip" aria-live="polite">
+          <span id="accountEmail">No account</span>
+          <span id="mailCount">0 mails</span>
+          <span id="alertCount">0 alerts</span>
+          <span id="trashCount">0 trash review</span>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <aside class="sidebar" aria-label="Mailbox categories">
+          <section class="gmail-panel">
+            <div class="sidebar-title">Gmail</div>
+            <p id="gmailStatus" class="connection-status">Checking...</p>
+            <div class="sidebar-actions">
+              <button id="connectGmailButton" class="secondary-button compact" type="button">Connect Gmail</button>
+              <button id="findAttachmentsButton" class="secondary-button compact" type="button">Find CV files</button>
+            </div>
+          </section>
+          <div class="sidebar-title">Categories</div>
+          <nav id="categoryFilters" class="filter-list"></nav>
+          <section class="model-panel">
+            <div class="sidebar-title">Models</div>
+            <div id="modelRoutes" class="model-routes"></div>
+          </section>
+        </aside>
+
+        <section class="mail-column" aria-label="Analyzed emails">
+          <div class="section-head">
+            <div>
+              <h2>Inbox Triage</h2>
+              <p id="bulkStatus" class="section-subtitle">0 selected</p>
+            </div>
+            <div class="head-actions">
+              <button id="selectCleanableButton" class="secondary-button compact" type="button">Select cleanable</button>
+              <button id="bulkTrashButton" class="danger-button compact" type="button" disabled>Trash selected</button>
+              <button id="refreshButton" class="icon-button" type="button" aria-label="Refresh mailbox" title="Refresh mailbox">
+                <span aria-hidden="true">R</span>
+              </button>
+            </div>
+          </div>
+          <div id="emailList" class="email-list"></div>
+        </section>
+
+        <section class="detail-column" aria-label="Selected email detail">
+          <div id="emailDetail" class="detail-empty">Select a mail to review its summary, policy, and draft.</div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
